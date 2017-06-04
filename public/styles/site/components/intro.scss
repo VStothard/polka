@@ -1,0 +1,10 @@
+.intro-bar {
+  display: block;
+  margin: 20px;
+  text-align: justify;
+
+  @media screen and (min-width: 768px) {
+    margin: 40px auto;
+    width: 70%;
+  }
+}

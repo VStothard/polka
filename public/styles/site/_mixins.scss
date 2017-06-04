@@ -1,0 +1,13 @@
+@mixin flex-button {
+  background: pink;
+  flex: 1;
+  margin: 20px;
+  padding: 20px;
+  width: auto;
+
+  @media screen and (max-width: 768px) {
+    flex: none;
+    margin: 20px 0px;
+    width: 100%;
+  }
+}

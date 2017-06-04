@@ -1,0 +1,13 @@
+
+.social-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 auto;
+  width: 60%;
+
+  .social-icon {
+    width: 50px;
+    height: 55px;
+    }
+}

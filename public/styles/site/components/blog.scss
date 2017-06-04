@@ -1,0 +1,14 @@
+.blog-bar {
+  display: flex;
+  .blog{
+    width: 100%;
+    .post {
+      display: inline-block;
+      width: 49%;
+
+      @media screen and (max-width: 768px) {
+        width: 100%;
+      }
+    }
+  }
+}

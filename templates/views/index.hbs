@@ -1,0 +1,54 @@
+{{!< default}}
+
+<div class="container">
+	<!--flex-box gallery-->
+	<div class="boxes">
+		<div class="box">1</div>
+		<div class="box">2</div>
+	</div>
+	<div class="boxes">
+		<div class="box">4</div>
+		<div class="box">5</div>
+		<div class="box">6</div>
+	</div>
+
+	<div class="intro-bar">
+		<p>Hey, I’m Verity. </p>
+    <p>I’m a self-taught web developer with a passion for good design and user experience. I currently work at Isobar (Digital Agency of the Year 2017 - heck yes!) as a Front End Developer. Which means I get to spend each day working with an amazing group of humans to help our clients create inspiring solutions to reach their business goals.</p>
+		<p>My title may be “developer”, but at the end of the day, I am a creative problem solver.</p>
+		<p>I’m interested in anything and everything. I believe in being a “serial generalist” - know a little about a lot, and work from there.</p>
+		<p>The greatest ideas come when worlds and skill sets collide, so let’s have a chat, and see what magic we can create.</p>
+	</div>
+
+	<!--cta's-->
+	<div class="need-bar">
+		<button class="need need-left">"I need a website"</button>
+		<button class="need need-right">"I'm hiring"</button>
+	</div>
+
+	<div class="social-bar">
+		<img src="images/fb-icon.png" class="social-icon">
+		<img src="images/twitter-icon.png" class="social-icon">
+		<img src="images/instagram-icon.png" class="social-icon">
+		<img src="images/linkedin-icon.png" class="social-icon">
+		<img src="images/tumblr-icon.png" class="social-icon">
+		<!-- <img src="images/github-icon.png" class="social-icon"> -->
+		<img src="images/codepen-icon.png" class="social-icon">
+	</div>
+
+	<div class="blog-bar">
+		<div class="blog">
+			{{# each data.posts.results}}
+			<div data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="post">
+				<h2><a href="{{postUrl slug}}">{{{title}}}</a></h2>
+				<p class="lead text-muted">{{{categoryList categories prefix="Posted in "}}}
+						{{#if author.name.first}}by {{author.name.first}}{{/if}}
+				</p>
+				{{#if image}}<img src="{{{cloudinaryUrl image width=160 height=160 crop='fit' }}}" class="img pull-right">{{/if}}
+				<p>{{{content.brief}}}</p>
+				{{#if content.extended}}<p class="read-more"><a href="{{postUrl slug}}">Read more...</a></p>{{/if}}
+			</div>
+			{{/each}}
+		</div>
+	</div>
+</div>
