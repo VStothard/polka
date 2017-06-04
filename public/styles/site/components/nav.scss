@@ -52,6 +52,10 @@
         &:last-child {
             padding-right: 0;
         }
+
+        &:hover {
+            background: none;
+        }
     }
 }
 

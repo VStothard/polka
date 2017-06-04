@@ -41,9 +41,26 @@
 
   .list-group {
     margin-top: 20px;
+
+    a {
+      background: none;
+      border: none;
+      color: $black;
+      padding-left: 0px;
+
+      &:hover {
+        background: none;
+        color: black;
+        font-weight: 600;
+      }
+    }
   }
 
   .post {
+    border-bottom: 1px solid slategrey;
+    padding: 0 0 40px;
+    margin: 0 0 60px;
+
     .img {
       width: 100%;
     }
