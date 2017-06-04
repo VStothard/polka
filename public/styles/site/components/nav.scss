@@ -1,9 +1,21 @@
 /*typed effect*/
+.navbar-brand {
+ span {
+     display: none;
+     @media screen and (min-width: 768px) {
+        display: inline-block;
+    }
+ }
+}
 .typed-cursor{
     opacity: 1;
-    -webkit-animation: blink 0.7s infinite;
-    -moz-animation: blink 0.7s infinite;
-    animation: blink 0.7s infinite;
+    animation: none;
+    
+    @media screen and (min-width: 768px) {
+        -webkit-animation: blink 0.7s infinite;
+        -moz-animation: blink 0.7s infinite;
+        animation: blink 0.7s infinite;
+    }
 }
 @keyframes blink{
     0% { opacity:1; }
@@ -26,4 +38,23 @@
   @media screen and (max-width: 768px) {
      display: block;
   }
+}
+
+
+/*bootstrap override*/
+.container-fluid {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-nav {
+    li a {
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+}
+
+.navbar-toggle .icon-bar {
+    border: 1px solid $black;
 }

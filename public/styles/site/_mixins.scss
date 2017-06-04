@@ -1,13 +1,15 @@
 @mixin flex-button {
-  background: pink;
+  background: $black;
+  border: none;
+  color: $white;
   flex: 1;
-  margin: 20px;
+  margin: 20px 0;
+  outline: none;
   padding: 20px;
   width: auto;
 
   @media screen and (max-width: 768px) {
     flex: none;
-    margin: 20px 0px;
     width: 100%;
   }
 }

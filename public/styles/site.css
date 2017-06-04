@@ -5822,17 +5822,26 @@ button.close {
     display: none !important; } }
 
 body {
-  background: #1f2041;
-  color: #fbfffe; }
+  background: #fbfffe;
+  color: #1f2041; }
   body a {
-    color: #fbfffe; }
+    color: #1f2041; }
 
 /*typed effect*/
+.navbar-brand span {
+  display: none; }
+  @media screen and (min-width: 768px) {
+    .navbar-brand span {
+      display: inline-block; } }
+
 .typed-cursor {
   opacity: 1;
-  -webkit-animation: blink 0.7s infinite;
-  -moz-animation: blink 0.7s infinite;
-  animation: blink 0.7s infinite; }
+  animation: none; }
+  @media screen and (min-width: 768px) {
+    .typed-cursor {
+      -webkit-animation: blink 0.7s infinite;
+      -moz-animation: blink 0.7s infinite;
+      animation: blink 0.7s infinite; } }
 
 @keyframes blink {
   0% {
@@ -5864,6 +5873,17 @@ body {
     .boxes {
       display: block; } }
 
+/*bootstrap override*/
+.container-fluid {
+  margin: 0;
+  padding: 0; }
+
+.navbar-nav li a:last-child {
+  padding-right: 0; }
+
+.navbar-toggle .icon-bar {
+  border: 1px solid #1b1b1e; }
+
 .boxes {
   display: flex;
   margin: 0 0 20px 0; }
@@ -5893,12 +5913,23 @@ body {
 
 .intro-bar {
   display: block;
-  margin: 20px;
-  text-align: justify; }
+  margin: 20px; }
   @media screen and (min-width: 768px) {
     .intro-bar {
-      margin: 40px auto;
-      width: 70%; } }
+      display: flex;
+      text-align: justify;
+      align-items: center;
+      margin: 40px auto; } }
+  .intro-bar .profile-photo {
+    flex: 1; }
+    .intro-bar .profile-photo img {
+      width: 100%; }
+  .intro-bar .profile-text {
+    flex: 2;
+    padding: 30px 0 0; }
+    @media screen and (min-width: 768px) {
+      .intro-bar .profile-text {
+        padding: 0 0 0 40px; } }
 
 .need-bar {
   display: flex; }
@@ -5906,34 +5937,80 @@ body {
     .need-bar {
       display: block; } }
   .need-bar .need {
-    background: pink;
+    background: #1b1b1e;
+    border: none;
+    color: #fbfffe;
     flex: 1;
-    margin: 20px;
+    margin: 20px 0;
+    outline: none;
     padding: 20px;
     width: auto; }
     @media screen and (max-width: 768px) {
       .need-bar .need {
         flex: none;
-        margin: 20px 0px;
         width: 100%; } }
+    .need-bar .need:first-child {
+      margin: 0px; }
+      @media screen and (min-width: 768px) {
+        .need-bar .need:first-child {
+          margin: 0 10px 0 0; } }
+    .need-bar .need:last-child {
+      margin: 20px 0 0; }
+      @media screen and (min-width: 768px) {
+        .need-bar .need:last-child {
+          margin: 0 0 0 10px; } }
 
 .social-bar {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 0 auto;
+  margin: 30px auto;
   width: 60%; }
   .social-bar .social-icon {
     width: 50px;
-    height: 55px; }
+    height: 55px;
+    margin: 10px 0; }
+    @media screen and (min-width: 768px) {
+      .social-bar .social-icon {
+        margin: 0; } }
 
-.blog-bar {
-  display: flex; }
-  .blog-bar .blog {
+.blog-bar .blog {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; }
+  @media screen and (max-width: 768px) {
+    .blog-bar .blog {
+      display: block; } }
+  .blog-bar .blog .post {
+    width: 50%; }
+    @media screen and (max-width: 768px) {
+      .blog-bar .blog .post {
+        width: 100%; } }
+    .blog-bar .blog .post:first-child {
+      margin: 0px; }
+      @media screen and (min-width: 768px) {
+        .blog-bar .blog .post:first-child {
+          margin: 0 10px 0 0; } }
+    .blog-bar .blog .post:last-child {
+      margin: 20px 0 0; }
+      @media screen and (min-width: 768px) {
+        .blog-bar .blog .post:last-child {
+          margin: 0 0 0 10px; } }
+    .blog-bar .blog .post img {
+      width: 100%; }
+
+.blog-page .list-group {
+  margin-top: 20px; }
+
+.blog-page .post .img {
+  width: 100%; }
+
+.contact-page .contact-img {
+  margin: 0 0 80px; }
+  .contact-page .contact-img img {
     width: 100%; }
-    .blog-bar .blog .post {
-      display: inline-block;
-      width: 49%; }
-      @media screen and (max-width: 768px) {
-        .blog-bar .blog .post {
-          width: 100%; } }
+
+.contact-page .contact-form {
+  display: block;
+  margin: 0 auto;
+  width: 59%; }

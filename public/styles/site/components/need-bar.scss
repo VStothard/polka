@@ -6,5 +6,20 @@
 
   .need {
     @include flex-button;
+
+    &:first-child {
+      margin: 0px;
+      @media screen and (min-width: 768px) {
+        margin: 0 10px 0 0;
+      }
+    }
+
+    &:last-child {
+      margin: 20px 0 0;
+      @media screen and (min-width: 768px) {
+        margin: 0 0 0 10px;
+      }
+    }
+
   }
 }
